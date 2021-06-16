@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "de84e069-741a-45dd-b1d1-ebc5d0dabb68",
+		"name": "ProjectBackEnd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get started",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"uploader\":\"Inacio\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/videos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "A1-Search all videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/videos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "A2-New video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"uploader\":\"  \",\n\t\"title\":\"  \",\n\t\"description\":\"  \",\n\t\"duration\":\"  \",\n\t\"url\":\"  \",\n\t\"views\":\"  \",\n\t\"likes\":\"  \",\n\t\"dislikes\":\"  \",\n\t\"comments\":[\"  \"],\n\t\"tags\":[\"  \"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/video",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"video"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "A3-Search for a uploader",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"uploader\":\"  \" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/video/uploader",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"video",
+						"uploader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "A4-Add a like",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/video/like/ << INSERTID >>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"video",
+						"like",
+						" << INSERTID >>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "A5-Search for tags",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tags\": [\"  \"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/videos/tag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"videos",
+						"tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "B1-Search video by his ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/videos/<< INSERTID >>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"videos",
+						"<< INSERTID >>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "B2-Delete a video ",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/videos/<< INSERTID >>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"videos",
+						"<< INSERTID >>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "B3-Add a dislike",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/video/dislike/<< INSERTID >>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"video",
+						"dislike",
+						"<< INSERTID >>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "B4-Add comments",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comments\":[\"  \"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/video/comments/<< INSERTID >>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"video",
+						"comments",
+						"<< INSERTID >>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "B5-Order all videos by amount of likes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/videos/order/desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"videos",
+						"order",
+						"desc"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
