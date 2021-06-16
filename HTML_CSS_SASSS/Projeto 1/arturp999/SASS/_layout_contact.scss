@@ -1,0 +1,121 @@
+
+/* PAGINA DO CONTACTO */
+
+.wrapFORM{
+display: flex;
+flex-flow: column;
+background-color: rgba(248, 225, 225, 0.8);
+border: 1px solid white;
+box-shadow: 1px 1px 25px white;
+height: 100%;
+padding: 10px 20px;
+}
+
+
+label{
+  font-family: Helvetica;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  margin-left: 2px;
+}
+
+.caixas{
+border: none;
+height: 40px;
+font-size: 15px;
+outline: none;
+font-family: Helvetica;
+margin-left: 2px;
+margin-right: 2px;
+background: transparent;
+color: black;
+border-bottom: 1px solid black;
+
+}
+.problema {
+width: 98%;
+height: 125px;
+resize: none;
+color: black;
+margin-bottom: 20px;
+
+}
+
+ /* mapa da localização*/
+.img_loc{
+  border-radius: 10px;
+  margin-left: 30px;
+  p{
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  img{
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display:block;
+    margin:auto;  
+
+  }
+}
+
+ /* BUTAO PARA ENVIAR INFORMAÇÃO*/
+
+.enviar{
+border: none;
+outline: none;
+border-radius: 20px;
+height: 45px;
+font-size: 18px;
+width:50%;
+background-color: transparent;
+color: black;
+background: gray;
+
+margin:auto;
+display:block;
+margin-bottom: 10px;
+}
+
+@media only screen and (max-width:600px) {
+  .enviar{
+    font-size: 12px;
+  }
+}
+
+.enviar:hover{
+    cursor: pointer;
+    background:#232323 ;
+    color:white ;
+}
+
+ /* Titulos e TEXTO contacto*/
+.contacto{
+    text-align: center;
+    font-size: 50px;
+}
+
+@media only screen and (max-width:600px) {
+  .contacto{
+    font-size: 30px;
+  }
+}
+
+
+.paragrafodosub{
+    text-align: center;
+    font-size: 25px;
+}
+
+@media only screen and (max-width:600px) {
+  .paragrafodosub{
+    font-size: 15px;
+  }
+}
+
+.textocontact{
+  text-align: center;
+  font-size: 10px;
+}

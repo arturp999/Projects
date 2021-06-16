@@ -1,0 +1,1 @@
+{"options":{"validator":{"$jsonSchema":{"bsonType":"object","required":["types"],"properties":{"types":{"bsonType":"string","description":"required and must be a string"}}}}},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"PressPlay.game_types"}],"uuid":"b5360a22d6d946bdb078a860fee2d224"}

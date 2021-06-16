@@ -1,0 +1,22 @@
+<body>
+  <div class="col-md-12" style="width: 500px">
+
+    <div ng-click="logout()" >
+      <a href="/app.html#!/home">Logout</a>
+    </div>
+
+    <h4 class="text-white">Welcome {{cookie.user}}!</h4>
+    <p class="text-white"><strong>User Dashboard</strong></p>
+  </div>
+
+  <ul>
+    <li ng-repeat="game in games | filter: searchBar">
+      <a href="/">
+        <img class="movieImgConfig" src="{{game.img_url}}" alt="img/filme">
+      </a>
+    </li>
+  </ul>
+
+
+
+</body>

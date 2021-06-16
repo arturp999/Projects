@@ -1,0 +1,77 @@
+<h1 class="titulos">Insert a new Game</h1>
+<br />
+
+<form name="gameForm" novalidate class="form-horizontal">
+    <div class="form-row">
+        <div class="col">
+            <input type="text" ng-model="game.name" class="form-control" name="name" placeholder="Game Name" />
+            <p ng-show="gameForm.name.$error.required && (gameForm.$submitted || gameForm.name.$dirty)"
+                class="text-danger">
+                Please Game Name
+            </p>
+        </div>
+        <div class="col">
+            <input type="date" class="form-control" ng-model="game.release_date" name="date" />
+            <p ng-show="gameForm.date.$error.required && (gameForm.$submitted || gameForm.date.$dirty)"
+                class="text-danger">
+                Please Select the Date
+            </p>
+        </div>
+    </div>
+    <br />
+    <div class="form-row">
+        <div class="col">
+            <select class="mx-auto d-block" ng-model="arrInput">
+                <option ng-repeat="type in game_types" value="{{type._id}}">
+                    {{type.types}}
+                </option>
+            </select>
+            <p class="text-white text-center">Current Genders = {{arr}}</p>
+            <button class="mx-auto d-block mt-2" ng-click="push()">Add Gender</button>
+        </div>
+
+        <div class="col">
+            <select class="mx-auto d-block" ng-model="arrInput2">
+                <option ng-repeat="dev in game_developers" value="{{dev._id}}">
+                    {{dev.name}}
+                </option>
+            </select>
+            <p class="text-white text-center"> Current Devs = {{arrDeveloper_id}}</p>
+            <button class="mx-auto d-block mt-2" ng-click='pushDev()'>
+                Add Developer
+            </button>
+        </div>
+
+        <div class="col">
+            <input type="text" name="game_img" ng-model="game.img_url" class="form-control"
+                placeholder="Game IMG link" />
+            <p ng-show="gameForm.game_img.$error.required && (gameForm.$submitted || gameForm.game_img.$dirty)"
+                class="text-danger">
+                Please Insert an IMG link
+            </p>
+        </div>
+    </div>
+    <br />
+    <div class="form-row">
+        <div class="col">
+            <h5 class="text-white text-center">Stock</h5>
+            <select class="mx-auto d-block" name="singleSelect" ng-model="game.stock">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select><br />
+        </div>
+        <div class="col">
+            <h5 class="text-white text-center">Select Game Publisher</h5>
+            <select class="mx-auto d-block" ng-model="game.publisher_id">
+                <option ng-repeat="publisher in game_publishers" value="{{publisher._id}}">
+                    {{publisher.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <br />
+
+    <button ng-click="saveData(game)" type="button" class="btn btn-warning btn-lg d-block mx-auto">
+        Insert Movie
+    </button>
+</form>

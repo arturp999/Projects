@@ -1,0 +1,58 @@
+Tema: Site para Ver Filmes→ Classes: Generos e Filmes
+
+14/12/2020
+-> Criação do projeto em laravel
+	.Criação do recurso MovieController
+-> Criação da base de dados
+	.Criação das migrações
+
+17/12/2020
+->Criação de views e tratamento de front end
+	.View (home/mainPage/movieDetails/createMovie/search
+->Criação de uma search bar e implementação de front end
+
+18/12/2020
+->Criação do botao DELETE/EDIT e os meus metodos
+	-> Criação de validações para os create/update
+
+19 e 20/12/2020
+->Criação do botao Rating e Most Recent
+->Criação do controller para autentificação de admin
+
+24/12/2020
+-> Criação da pagina de contacto
+-> Criação das migrações dos generos
+
+25/12/2020
+-> Criação da pagina de generos
+-> Criação das queries de pesquisa para os generos
+
+26/12/2020
+-> Tratamento de frontend e corrigir alguns erros
+
+
+
+• Datas Previstas:
+o Entrega: 05/01/2021
+o Apresentação/defesa: 07/01/2021
+• Defesa: 2 a 4 perguntas, 9.5 mínimo
+• Para o relatório, usar o modelo de capa: Modelo da capa dos trabalhos
+académicos CTeSP
+• Enviar o relatório em formato .pdf e incluir no ficheiro .zip enviado.
+• No phpmyadmin: exportar a base de dados para um ficheiro .sql
+• Comprimir os ficheiros num ficheiro .zip
+• Ou enviar por email, we transfer, google drive, dropbox ou serviço similar
+
+
+
+SELECT * FROM gender_movies
+INNER JOIN movies
+ON gender_movies.movie_id = movies.id
+INNER JOIN genders
+ON gender_movies.gender_id = genders.id
+ORDER BY gender_movies.movie_id
+
+
+
+
+

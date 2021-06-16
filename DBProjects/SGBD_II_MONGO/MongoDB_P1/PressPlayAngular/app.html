@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Press Play</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css\app.css" />
+  <!-- JS (load angular, ui-router, and our custom js file) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
+
+  <script src="/routes/app.js"></script>
+  <script src="./controllers/gamesController.js"></script>
+  <script src="./controllers/userController.js"></script>
+  <script src="./controllers/createGameController.js"></script>
+  <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+</head>
+
+<body ng-app="routerApp">
+  <div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" ui-sref="home">Press Play</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" ui-sref="home" ui-sref-active="active">Home
+              </a>
+            </li>
+            <li ng-show="!loggedIn" class="nav-item">
+              <a class="nav-link" ui-sref="register" ui-sref-active="active">Register</a>
+            </li>
+            <li ng-show="!loggedIn" class="nav-item">
+              <a class="nav-link" ui-sref="login" ui-sref-active="active">Login</a>
+            </li>
+            <li ng-show="loggedIn" class="nav-item">
+              <a class="nav-link" ui-sref="dashboard" ui-sref-active="active">Dashboard</a>
+            </li>
+
+            <li ng-show="isAdmin" class="nav-item">
+              <a class="nav-link" ui-sref="createGames" ui-sref-active="active">Create Games</a>
+            </li>
+
+            <li ng-show="loggedIn" class="nav-item">
+              <a class="nav-link" ui-sref="logout" ui-sref-active="active">Logout</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div ui-view class="mainContainer"></div>
+  </div>
+</body>
+
+</html>

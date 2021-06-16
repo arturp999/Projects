@@ -1,0 +1,6 @@
+
+14/12/2020
+-> Criação do projeto em laravel
+	.Criação do controller ImageLoader
+-> Criação da base de dados
+	.Criação das migrações

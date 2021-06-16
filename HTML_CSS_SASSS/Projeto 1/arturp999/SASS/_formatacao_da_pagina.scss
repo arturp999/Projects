@@ -1,0 +1,209 @@
+
+ /*ESTA PAGINA CONTEM FORMATAÇÃO DA PAGINA/TITULOS/BUTOES */
+ 
+
+#body{
+    background-color: #232323;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    font-family: Helvetica;
+    background: url(../Imagens/porto-moniz-2560x1600-sunset-rocks-madeira-islands-5004.jpg);
+}
+
+ /*TITULO HEADER */
+.tit1{
+    margin:0;
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 25px;
+    color: wheat;
+    float: left;
+    background-color: rgb(61, 57, 57);
+   
+ }
+ .colunabutton{
+    background-color: rgb(61, 57, 57);
+    border-radius: 5px;
+ }
+ .madeira{
+     font-size: 45px;
+ }
+
+  /*BOTÕES E CONFIGURAÇÃO e HEADER */
+
+.button {
+    background-color: rgb(61, 57, 57);
+    color:white;
+    border: 0;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    height: 55px;
+    float:right;
+    font-family: Helvetica;
+  }
+ .button:hover {
+    background-color: rgb(105, 102, 102);
+    color: white;
+    border-radius: 5px;
+  }
+
+.button:focus {
+    outline: none;
+     }
+
+     
+ /*FOOTER*/
+
+.foot{
+    text-align: center;
+    bottom: -80px;
+    position: relative;
+    background: rgba(248, 225, 225, 0.4);
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    li{
+        list-style:none;
+        display: inline-block;
+        margin-right: 15px;
+        transition: 0,5s;
+        margin-top: 2px;
+    }
+    li:hover{
+        color: #292929;
+        transform: scale(1.4); 
+    }
+
+   }
+
+a { 
+    text-decoration: none;
+}
+
+
+/* hambuguer css */
+
+.navigation{
+    display: none;
+}
+
+@media only screen and (max-width:600px) 
+{
+   #menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 20px;
+  
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: blue;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 5px;
+
+  background: black;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu
+{
+    position: absolute;
+    margin: -77px 0 0 -100px;
+    padding: 50px;
+    padding-top:0px;
+    border: 1px solid black;
+    background: rgba(248, 225, 225, 0.9);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding-top: 20px;
+  font-size: 13px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+.navigation{
+    display: inline;
+}
+}

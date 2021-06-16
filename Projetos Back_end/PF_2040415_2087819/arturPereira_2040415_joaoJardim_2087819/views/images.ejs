@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            padding-top: 80px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center t1main">All your cats! </h1>
+            <button class="btn btn-danger" id="apaga">
+                <h3>DO NOT CLICK!</h3>
+            </button>
+            <div class="col-sm">
+                <% for (var i = 0; i < locations.length; i++) { %>
+                    <div class="text-center testing">
+                        <img class="tamanhoIMG" src="/images/<%= locations[i] %>" />
+                    </div>
+                    <% } %>
+            </div>
+
+            <br>
+            <br>
+            <div class="text-center">
+                <a href="/profile" class="btn btn-danger"><span class="fa fa-user"></span> Back to profile</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    .t1main {
+        margin-bottom: 10px;
+        font-family: "Times New Roman";
+        font-size: 50px;
+        margin-bottom: 20px;
+        color: white;
+    }
+    
+    .testing {
+        border: solid 1px black;
+        display: inline-block;
+        margin: 2px;
+        background-color: black;
+    }
+    
+    .tamanhoIMG {
+        margin: 1px;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+    }
+    
+    html,
+    body {
+        background-color: teal;
+    }
+    
+    .h1_headers {
+        color: white;
+    }
+    
+    body {
+        padding-top: 80px;
+    }
+</style>
+
+<script>
+    $("#apaga").click(function() {
+        console.log("clicked");
+        $.ajax({
+            url: "http://localhost:3000/cat/catDeleteAll",
+            type: "DELETE",
+            success: function(res) {
+                alert(res)
+                history.back();
+            }
+        });
+    })
+
+    // error: function (request, status, error) {
+    //     alert(request.responseText);
+    // }
+
+    //     if(status = 404 ){
+    // alert("not found")
+    // }
+</script>
+
+</html>

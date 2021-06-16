@@ -1,0 +1,108 @@
+<form name="editGameForm" novalidate class="form-horizontal">
+  <h1 class="text-white text-center">EDIT</h1>
+  <div class="card mb-3 text-white bg-dark mt-5">
+    <div class="row">
+      <div class="col-6 col-md-3 mr-4 ml-5">
+        <img ng-repeat="game in games" class="movieImgConfigDetails" src="{{game.img_url}}" />
+        <!-- INPUT -->
+        <input class="m-2 text-center" type="text" name="game_img" ng-model="editedGame.img_url" class="form-control"
+          placeholder="New IMG link" />
+        <!-- INPUT -->
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="card-body">
+          <div class="card text-white bg-success mb-3">
+            <div class="card-header">
+              <h5 ng-repeat="game in games" class="subTitulos">{{game.name}}</h5>
+              <!-- INPUT -->
+              <input class="mx-auto d-block text-center" type="text" ng-model="editedGame.name" class="form-control"
+                name="name" placeholder="New Name" />
+              <!-- INPUT -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h5 class="text-center">Game Developers:</h5>
+              <ul ng-repeat="game in games">
+                <li ng-repeat="i in game.Developers">{{i.name}}</li>
+              </ul>
+              <!-- INPUT -->
+              <div >
+                <select class="mx-auto d-block" ng-model="editedGame.developer_id" >
+                  <option name="developer_id" ng-repeat="dev in game_developers" value="{{dev._id}}">
+                    {{dev.name}}
+                  </option>
+                </select>
+                <p class="text-white text-center"> Current Devs = {{devArray}}</p>
+              <button class="mx-auto d-block mt-1 mb-1" ng-click='pushDevNew()'>
+                Add Developer
+              </button>
+              </div>
+              <!-- INPUT -->
+            </div>
+
+            <div class="col">
+              <h5 class="text-center">Game Publisher:</h5>
+              <ul ng-repeat="game in games">
+                <li ng-repeat="i in game.Publisher">{{i.name}}</li>
+              </ul>
+              <!-- INPUT -->
+              <select class="mx-auto d-block mb-2" ng-model="editedGame.publisher_id">
+                <option ng-repeat="publisher in game_publishers" value="{{publisher._id}}">
+                  {{publisher.name}}
+                </option>
+              </select>
+              <!-- INPUT -->
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col">
+              <h5 class="text-center">Game Type:</h5>
+              <ul ng-repeat="game in games">
+                <li ng-repeat="i in game.Type_of_Game">{{i.types}}</li>
+              </ul>
+              <!-- INPUT -->
+              <select class="mx-auto d-block" ng-model="editedGame.game_type_id" >
+                <option ng-repeat="type in game_types" value="{{type._id}}">
+                  {{type.types}}
+                </option>
+              </select>
+              <p class="text-white text-center">Current Types = {{typeArray}}</p>
+              <button class="mx-auto d-block mt-2" ng-click="pushDevType()">Add Gender</button>
+              <!-- INPUT -->
+            </div>
+
+            <div class="col">
+              <h5 class="text-center">Release date:</h5>
+              <p ng-repeat="game in games" class="font-italic font-weight-light text-center">
+                {{game.release_date}}
+              </p>
+              <!-- INPUT -->
+              <input class="mx-auto d-block text-center" type="date" class="form-control"
+                ng-model="editedGame.release_date" name="date" />
+              <!-- INPUT -->
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+  <div class="buttonsBOX">
+    <div class="action_btn">
+      <a ui-sref="home">
+        <button ng-click="saveEditedGame(editedGame)" type="button" class="btn btn-warning btn-lg">
+          Save Movie
+        </button>
+      </a>
+
+      <a ui-sref="home">
+        <button type="submit" value="submit" class="btn btn-info btn-lg">
+          Go Back
+        </button>
+      </a>
+      </a>
+    </div>
+  </div>
+</form>

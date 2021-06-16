@@ -1,0 +1,22 @@
+
+<h2 ng-hide="user._id!=null" class="text-white">Login</h2>
+<hr>
+<div class="container">
+    <div class="col-md-12">
+        <form name="userForm" ng-submit="tryLogin(user)" novalidate class="form-horizontal">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="user.user" placeholder="username" ng-required="true" />
+                </div>
+                <div class="form-group">
+                    <input type="password" ng-model="user.password"  placeholder="password" ng-required="true" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary"/>
+                </div>
+                <span class="text-danger" style="color: red">{{ errorMessage  }}</span>
+            </div>
+        </form>
+    </div>
+
+</div>

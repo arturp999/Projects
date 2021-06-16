@@ -1,0 +1,151 @@
+
+   /*TITULO DA PARA PARA PESQUISA */
+.subtitform{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+@media (max-width:600px) 
+{
+    .subtitform{
+        font-size: 15px;
+        margin-top: -5px;
+    }
+}
+ /*SUB TITULO DA PARA PARA PESQUISA */
+.subtitform1{
+    margin-top: 0;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+@media (max-width:600px) 
+{
+    .subtitform1{
+        font-size: 10px;
+        margin-bottom: -50px;
+    }
+}
+
+  /*BARRA PARA PESQUISAR */
+ .form-pesquisa{
+    border-radius: 10px;
+    margin-top: 17px;
+}
+
+
+/* LUPA DE PESQUISA versao 2 teste*/
+.procura-caixa {
+    position: absolute;
+    background: rgb(61, 57, 57);
+    height: 35px;
+    border-radius: 35px;
+    padding: 10px;
+}
+
+
+@media only screen and (max-width:600px) {
+    .procura-caixa {
+        display: none;
+    }
+}
+
+.procura-caixa:hover > .procura-txt {
+    width:auto;
+    padding: 0 6px;
+}
+   
+.procura-btn {
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(61, 57, 57);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: white;
+    cursor: pointer;
+}
+.procura-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 15px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;    
+}
+.opcoes{
+        background-color: rgb(61, 57, 57);
+    color:white;
+    font-size: 15px;
+    margin-top: 7px;
+}
+
+
+
+
+    /* LUPA DE PESQUISA SGV*/
+.pesquisa{
+    border: none;
+    background-color: Transparent;
+    cursor:pointer;
+}
+.sgvpesquisa{
+    height:23px;
+
+}
+.pesquisa:hover {
+    background-color: rgba(248, 225, 225, 0.5);
+    border-radius: 10px;
+  }
+
+
+  /*IMAGENS PAGINA PRINCIPAL e SUBTITULO */
+
+.tamanhoIMG{
+    width: auto;
+    height: 200px;
+}
+
+
+.subtitulo1{
+    text-align: center;
+}
+.imagens{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    border: 2px solid rgb(61s, 57, 57);
+    transition: transform .2s;
+    margin: 0 auto;
+}
+
+.imagens:hover{
+
+    -ms-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); 
+  }
+
+@media only screen and (max-width:600px) {
+    .imagens{
+    width: 80%;
+    height:80%;
+    margin-left: 40px;
+    object-fit: cover;
+}
+    .imagens:hover{
+
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); 
+  }
+  }

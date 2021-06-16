@@ -1,0 +1,13 @@
+https://linuxize.com/post/how-to-list-users-in-linux/
+
+https://linuxconfig.org/how-to-find-all-files-with-a-specific-text-using-linux-shell
+
+https://www.cyberciti.biz/tips/find-out-if-file-exists-with-conditional-expressions.html
+
+https://www.tecmint.com/linux-find-command-to-search-multiple-filenames-extensions/
+
+https://unix.stackexchange.com/questions/48492/list-only-regular-files-but-not-directories-in-current-directory
+
+https://superuser.com/questions/336275/find-out-if-user-name-exists
+
+https://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/

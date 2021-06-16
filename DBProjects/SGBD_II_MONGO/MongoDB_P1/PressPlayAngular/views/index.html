@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <header>
+        <title>Press Play</title>
+    </header>
+</head>
+
+<body>
+    <br>
+    <h1 class="titulos">Welcome to Press Play!</h1>
+    <h5 class="subTitulos">Interested in a game? Buy it!</h5>
+    <br>
+
+    <form>
+        <input class="form-control searchBar" ng-model="searchBar" type="text" placeholder="Search" aria-label="Search">
+    </form>
+
+    <div class="container"> 
+        <div class="row">
+            <div ng-repeat="game in games | filter: searchBar" class="col-sm movieContainers no-gutters">
+                <a ui-sref="gameInfo({id:game._id})">
+                    <img class="movieImgConfig" src="{{game.img_url}}" alt="img/filme">
+                </a>
+            </div>
+        </div>
+       
+    </div>
+
+
+</body>

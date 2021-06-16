@@ -1,0 +1,757 @@
+https://drive.google.com/file/d/16a9ITe3hnzkaFPaaSXuqe8iqXLdji64u/view?usp=sharing
+
+use PressPlay
+
+					VALIDAÇÕES
+
+db.createCollection( "games" , { 
+   validator: { $jsonSchema: { 
+      bsonType: "object", 
+      required: [ "_id", "name", "game_type_id","developer_id","publisher_id", "release_date", "stock"], 
+      properties: { 
+	_id: { 
+            bsonType: "int", 
+            description: "required and must be a string" }, 
+	name: { 
+            bsonType: "string", 
+            description: "required and must be a string" }, 
+	game_type_id: { 
+		bsonType: "array",
+        	description: "required array" },
+	developer_id:{
+		bsonType: "array",
+        	description: "required array"},
+	publisher_id: { 
+            bsonType: "int", 
+            description: "required and must be a integer" }, 
+	release_date: { 
+            bsonType: "date", 
+            description: "required and must be a integer" },
+	stock: { 
+            bsonType: "bool", 
+            description: "required and must be a integer" },
+      }
+   }
+}})
+
+db.createCollection( "seller" , { 
+   validator: { $jsonSchema: { 
+      bsonType: "object", 
+      required: [ "price", "quantity",  "games_id",  "seller_id"], 
+      properties: { 
+        price: { 
+            bsonType: "double", 
+            description: "must be a double if the field exists" },
+	quantity: { 
+            bsonType: "int", 
+            description: "required and must be a integer" }, 
+	games_id: { 
+            bsonType: "int", 
+            description: "required and must be a integer" }, 
+	seller_id: { 
+            bsonType: "int", 
+            description: "required and must be a integer" }, 
+      }
+   }
+}})
+
+db.createCollection( "game_developers" , { 
+   validator: { $jsonSchema: { 
+      bsonType: "object", 
+      required: [ "name"], 
+      properties: { 
+         name: { 
+            bsonType: "string", 
+            description: "required and must be a string" }, 
+      }
+   }
+}})
+
+db.createCollection( "game_types" , { 
+   validator: { $jsonSchema: { 
+      bsonType: "object", 
+      required: [ "types"], 
+      properties: { 
+         types: { 
+            bsonType: "string", 
+            description: "required and must be a string" }, 
+      }
+   }
+}})
+
+db.createCollection( "game_publishers" , { 
+   validator: { $jsonSchema: { 
+      bsonType: "object", 
+      required: [ "name", "country" ], 
+      properties: { 
+         name: { 
+            bsonType: "string", 
+            description: "required and must be a string" }, 
+         country: { 
+            bsonType: "string", 
+            description: "required and must be a string" }, 
+      }
+   }
+}})
+
+db.createCollection( "users" , { 
+   validator: { $jsonSchema: { 
+      bsonType: "object", 
+      required: [ "user", "email", "password" ], 
+      properties: { 
+         user: { 
+            bsonType: "string", 
+            description: "required and must be a string" }, 
+         email: { 
+            bsonType: "string", 
+            pattern: "^.+\@.+$", 
+            description: "required and must be a valid email address" }, 
+         password: { 
+            bsonType: "string", 
+            description: "required and must be a string" }, 
+      }
+   }
+}})
+
+.........................................................................................
+					INSERTS
+.........................................................................................
+db.seller.insertMany([
+{
+	"seller_id":NumberInt(1),
+	"quantity":NumberInt(3),
+	"price":26.99,
+	"games_id":NumberInt(11),
+},
+{
+	"seller_id" :NumberInt(1),
+	"quantity":NumberInt(5),
+	"price":11.90,
+	"games_id":NumberInt(1),
+},
+{ 
+	"seller_id" :NumberInt(2),
+	"quantity":NumberInt(1),
+	"price":20.49,
+	"games_id":NumberInt(1),
+},
+{ 
+	"seller_id" :NumberInt(3),
+	"quantity":NumberInt(5),
+	"price":10.49,
+	"games_id":NumberInt(3),
+},
+{ 
+	"seller_id":NumberInt(3),
+	"quantity":NumberInt(20),
+	"price":12.99,
+	"games_id":NumberInt(3),
+},
+{ 
+	"seller_id":NumberInt(2),
+	"quantity":NumberInt(1),
+	"price":7.99,
+	"games_id":NumberInt(4),
+},
+{ 
+	"seller_id":NumberInt(3),
+	"quantity":NumberInt(100),
+	"price":14.99,
+	"games_id":NumberInt(5),
+},
+{ 
+	"seller_id":NumberInt(4),
+	"quantity":NumberInt(6),
+	"price":28.99,
+	"games_id":NumberInt(6),
+},
+{ 
+	"seller_id":NumberInt(4),
+	"quantity":NumberInt(8),
+	"price":13.99,
+	"games_id":NumberInt(7),
+},
+{ 
+	"seller_id":NumberInt(4),
+	"quantity":NumberInt(6),
+	"price":28.99,
+	"games_id":NumberInt(8),
+},
+{ 
+	"seller_id":NumberInt(1),
+	"quantity":NumberInt(15),
+	"price":54.99,
+	"games_id":NumberInt(9),
+},
+{ 
+	"seller_id":NumberInt(2),
+	"quantity":NumberInt(1),
+	"price":49.99,
+	"games_id":NumberInt(10),
+}
+])
+
+
+
+db.game_developers.insertMany([
+{
+	"_id":1,
+	"name":"Rockstar North "
+},
+{
+	"_id":2,
+	"name":"Rockstar San Diego"
+},
+{
+	"_id":3,
+	"name":"Rockstar Leeds"
+},
+{
+	"_id":4,
+	"name":"Rockstar Toronto"
+},
+{
+	"_id":5,
+	"name":"Ubisoft Montreal"
+},
+{
+	"_id":7,
+	"name":"Virtual Basement"
+},
+{
+	"_id":8,
+	"name": "Efecto Studios"
+},
+{
+	"_id":9,
+	"name":"Instinct Games"
+},
+{
+	"_id":10,
+	"name":"Abstraction"
+},
+{
+	"_id":11,
+	"name":"Bethesda Game Studios"
+},
+{
+	"_id":12,
+	"name":"Behaviour Interactive"
+},
+{
+	"_id":13,
+	"name":"CD Projekt RED"
+},
+{
+	"_id":14,
+	"name":"Playground Games"
+},
+{
+	"_id":15,
+	"name":"Turn 10 Studios"
+},
+{
+	"_id":16,
+	"name":"Gearbox Software"
+},
+{
+	"_id":17,
+	"name":"Gearbox studio Quebec"
+},
+{
+	"_id":18,
+	"name":"Treyarch"
+},
+
+{
+	"_id":19,
+	"name":"Beenox"
+},
+{
+	"_id":20,
+	"name":"Raven Software"
+}
+])
+
+db.games.insertMany([
+ {
+	"_id":NumberInt(1),
+	"name":"Grand Theft Auto V: Premium Online Edition",
+	"release_date":new Date("2013-09-13"),
+	"stock":true,
+	"game_type_id":[1,2,7],	
+	"publisher_id": NumberInt(9),
+	"developer_id":[1,2,3,4]
+},
+{	"_id":NumberInt(2),
+	"name":"Assassin's Creed: Valhalla",
+	"release_date":new Date("2020-11-10"),
+	"stock":false,
+	"game_type_id":[1,2],	
+	"publisher_id": NumberInt(1),
+	"developer_id":[5]
+},
+{	"_id":NumberInt(3),
+	"name":"ARK: Survival Evolved",
+	"release_date":new Date("2015-06-02"),
+	"stock":true,
+	"game_type_id":[1,2,7,4],	
+	"publisher_id": NumberInt(2),
+	"developer_id":[7,8,9,10]
+		
+},
+{	"_id":NumberInt(4),
+	"name":"The Elder Scrolls V: Skyrim Special Edition",
+	"release_date":new Date("2011-11-11"),
+	"stock":true,
+	"game_type_id":[1,2,4,9],	
+	"publisher_id": NumberInt(3),
+	"developer_id":[11]
+},
+{	"_id":NumberInt(5),
+	"name":"Dead by Daylight",
+	"release_date":new Date("2016-06-14"),
+	"stock":true,
+	"game_type_id":[4,7,9],	
+	"publisher_id":NumberInt(4),
+	"developer_id":[12]
+},
+{	"_id":NumberInt(6),
+	"name":"The Witcher 3: Wild Hunt GOTY Edition",
+	"release_date":new Date("2015-05-18"),
+	"stock":true,
+	"game_type_id":[4,9],	
+	"publisher_id":NumberInt(5),
+	"developer_id":[13]
+},
+{	"_id":NumberInt(7),
+	"name":"Forza Horizon 4 Standard Edition",
+	"release_date":new Date("2018-09-28"),
+	"stock":true,
+	"game_type_id":[6,7],	
+	"publisher_id":NumberInt(6),
+	"developer_id":[14,15]
+},
+{	"_id":NumberInt(8),
+	"name":"Cyberpunk 2077",
+	"release_date":new Date("2020-12-10"),
+	"stock":true,
+	"game_type_id":[1,2,4],	
+	"publisher_id": NumberInt(5),
+	"developer_id":[13]
+},
+{	"_id":NumberInt(9),
+	"name":"Borderlands 3",
+	"release_date":new Date("2019-09-13"),
+	"stock":true,
+	"game_type_id":[1,2,7,9],	
+	"publisher_id": NumberInt(7),
+	"developer_id":[16,17]
+},
+{	"_id":NumberInt(10),
+	"name":"Call of Duty Black Ops: Cold War",
+	"release_date":new Date("2020-11-13"),
+	"stock":true,
+	"game_type_id":[1,2,4,7,9],	
+	"publisher_id":NumberInt(8),
+	"developer_id":[18,19,20]
+},
+{	"_id":NumberInt(11),
+	"name":"Red Dead Redemption 2",
+	"release_date":new Date("2018-10-26"),
+	"stock":true,
+	"game_type_id":[1,2,4],	
+	"publisher_id":NumberInt(5),
+	"developer_id":[1,2,3,4]
+}
+])
+
+.........................................................................................
+
+
+db.game_types.insertMany([
+{
+	"_id":1,
+	"types":"Ação"
+},{
+	"_id":2,
+	"types":"Aventura"
+},{
+	"_id":3,
+	"types":"Estratégia"
+},{
+	"_id":4,
+	"types":"RPG"
+},{
+	"_id":5,
+	"types":"Desporto"
+},{
+	"_id":6,
+	"types":"Corrida"
+},{
+	"_id":7,
+	"types":"Jogo online"
+},{
+	"_id":8,
+	"types":"Simulação"
+},{
+	"_id":9,
+	"types":"Outros gêneros"
+}
+])
+
+.........................................................................................
+
+
+db.game_publishers.insertMany([
+{
+	"_id":1,
+	"name":"Ubisoft",
+	"country":"France"
+},{
+	"_id":2,
+	"name":"Wild Card",
+	"country":"United States"
+},{
+	"_id":3,
+	"name":"Bethesda Game Studios",
+	"country":"United States"
+},{
+	"_id":4,
+	"name":"Behaviour Interactive",
+	"country":"Canada"
+},{
+	"_id":5,
+	"name":"CD Projekt",
+	"country":"Poland"
+},{
+	"_id":6,
+	"name":"Turn 10 Studios",
+	"country":"United States"
+},{
+	"_id":7,
+	"name":"Gearbox Software",
+	"country":"United States"
+},{
+	"_id":8,
+	"name":"Activision",
+	"country":"United States"
+},{
+	"_id":9,
+	"name":"Rockstar Games",
+	"country":"United States"
+}
+])
+
+.........................................................................................
+
+db.users.insertMany([
+{
+	"_id": 1,
+	"user":"Artur Pereira",
+	"email":"arturpe95@gmail.com",
+	"password":"asdasdasdsad2040415"
+},{
+	"_id":2,
+	"user":"Joao Cabral",
+	"email":"naoseioteuEmail@gmail.com",
+	"password":"asdasdsad2030919"
+},{
+	"_id":3,
+	"user":"Magno Andrade",
+	"email":"magno.andrade@staff.uma.pt",
+	"password":"trabalhoMerece20"
+},{
+	"_id":4,
+	"user":"Juan Martin",
+	"email":"juanMartin@hotmail.com",
+	"password":"randomUser12345"
+}
+])
+
+
+.........................................................................................
+					UPDATE
+.........................................................................................
+
+//Alterando o nome de um estudio
+db.game_publishers.update(
+{"name":"Bethesda Game Studios"},{"name":"Bethesda Game Studio"})
+
+//Alterando todos os campos que tem o nome game_type_id
+db.games.updateMany({},{$rename:{"game_type_id":"type_id"}})
+
+//Fazendo um update do array normal
+db.games.update({"_id":11},{$push: {"type_id": 3}})
+
+db.game_types.update({},
+{"type":"Ação"},{$set:{"type":"Action"}})
+
+db.game_types.update({},
+{"type":"Aventura"},{$set:{"type":"Adventure"}})
+
+db.game_types.update({},
+{"type":"Estratégia"},{$set:{"type":"Strategy"}})
+
+db.game_types.update({},
+{"type":"Desporto"},{$set:{"type":"Sports"}})
+
+db.game_types.update({},
+{"type":"Corrida"},{$set:{"type":"Running"}})
+
+db.game_types.update({},
+{"type":"Jogo online"},{$set:{"type":"Online Game"}})
+
+db.game_types.update({},
+{"type":"Simulação"},{$set:{"type":"Simulation"}})
+
+db.game_types.update({},
+{"type":"Outros gêneros"},{$set:{"type":"Other genders"}})
+.........................................................................................
+					DELETE
+
+//Remove os documentos que não tem stock
+db.games.remove(
+{"stock":false})
+
+//Remove o seller ID de 3
+db.seller.remove(
+{"seller_id":3})
+
+//Remove todos os publishers que o pais é "United States"
+db.game_publishers.remove(
+{"country":"United States"})
+
+//Apaga os publisher que nao tem jogos
+db.game_publishers.remove(
+{"country": /.*U.*/})
+
+//remove o genero de acçaõ
+db.game_types.remove(
+{"type": "Aventura"})
+
+//Da delete de todos os jogos que a release date é superior a 2000-01-01
+db.games.deleteMany({"release_date":{$gt: new Date('2000-01-01')}})
+
+//Remove todas as vendas em que o preço é maior que 10€
+db.seller.remove(
+{"price":{$gt: 10 }})
+
+.........................................................................................
+					READ
+//Indica todos os jogos que sairam depois da data indicada
+db.games.find(
+{"release_date":{$gt: new Date('2000-01-01')}}).pretty() 
+
+//Indica todos os jogos que tem o vendedor com o ID 2
+db.games.find({"seller.seller_id":2}).pretty()
+
+//Indica todos os jogos que tem o vendedor com o ID 1
+db.seller.aggregate([
+{
+$lookup:{
+	from:"games",
+	localField:"games_id",
+	foreignField:"_id",
+	as: "CurrentlySelling"}
+},{$match:{"seller_id":1}}]).pretty()
+
+
+//Indica todos os jogos que o vendedor com o ID 2 está a vender
+db.seller.find({"seller_id":2}).count()  
+
+//diz quantos vendedores distintos existem
+db.seller.distinct("seller_id").length 
+
+//encontra o jogo indicado
+db.games.find({"name":"Red Dead Redemption 2"}).pretty()  
+
+//Aparece os jogos que têm stock
+db.games.aggregate([
+{$match:{"stock":{$eq: true}}}])	.........................................................................................
+				ANALISE DE DADOS
+
+	//Indica quais os jogos que os utilizadores tao a vender e o preço
+
+db.seller.aggregate([
+{$lookup:{
+	from:"users",
+	localField:"seller_id",
+	foreignField:"_id",
+	as: "User_id"
+}},
+{$lookup:{
+	from:"games",
+	localField:"games_id",
+	foreignField:"_id",
+	as: "Games"
+}},{
+        "$project": {
+	"_id":0,
+	"email":1,
+	"User_id.user":1,
+	"Games.name":1,
+	"price":1
+        }
+      }
+]).pretty()
+
+		//Indica o publisher e o nome do jogo
+
+db.game_publishers.aggregate([{
+$lookup:{
+	from:"games",
+	localField:"_id",
+	foreignField:"publisher_id",
+	as: "Publisher_Game"
+}},
+      {
+        "$project": {
+	"_id":1,
+	"name":1,
+	"Publisher_Game.name":1
+        }
+      }
+]).pretty()
+
+
+//Indica o nome do jogo, o preço que o jogo está a ser vendido o seu publisher o seu tipo e ainda os seus game developers
+
+db.games.aggregate([
+{$lookup:{
+	from:"seller",
+	localField:"_id",
+	foreignField:"games_id",
+	as: "Seller"
+}},
+{$lookup:{
+	from:"game_publishers",
+	localField:"publisher_id",
+	foreignField:"_id",
+	as: "Publisher"
+}},{$lookup:{
+	from:"game_developers",
+	localField:"developer_id",
+	foreignField:"_id",
+	as: "Developers"
+}},{$lookup:{
+	from:"game_types",
+	localField:"game_type_id",
+	foreignField:"_id",
+	as: "Type_of_Game"
+}},
+{
+        "$project": {
+	"_id":0,
+	"name":1,
+	"Seller.price":1,
+	"Seller.seller_id":1,
+	"Publisher.name":1,
+	"Developers.name":1,
+	"Type_of_Game.type":1,
+        }
+      }
+]).pretty()
+
+
+//Todos os jogos de um user que estam a venda e o jogo.
+
+db.seller.aggregate([
+{$lookup:{
+	from:"users",
+	localField:"seller_id",
+	foreignField:"_id",
+	as: "Users"
+}},
+{$lookup:{
+	from:"games",
+	localField:"games_id",
+	foreignField:"_id",
+	as: "Games"
+}},
+{$match:{"seller_id":1}}
+,
+{
+        "$project": {
+	"_id":0,
+	"Users.user":1,
+	"Games.name":1
+        }
+      }
+]).pretty()
+
+
+
+//Mostrar apenas of filmes que são de o publisher de um destino
+
+
+db.game_publishers.aggregate([
+{$lookup:{
+	"from":"games",
+	"localField":"_id",
+	foreignField:"publisher_id",
+	as: "Games"}
+	},
+{$match:{"country":"United States"}},
+{"$project": {
+	"_id":0,
+	"name":1,
+	"country":1,
+	"Games.name":1}
+      }
+]).pretty()
+
+
+//O valor de todos os jogos que estam a ser vendidos por o user 1 superiores a 10€
+
+db.seller.aggregate([
+{$lookup:{
+	from:"users",
+	localField:"seller_id",
+	foreignField:"_id",
+	as: "User"}
+},
+{$lookup:{
+	from:"games",
+	localField:"games_id",
+	foreignField:"_id",
+	as: "Game"}
+},
+{$match:{$and:[{"seller_id":1},{"price": {$gt: 10}}]}},
+{"$project": {
+	"_id":0,
+	"User.user":1,
+	"Game.name":1,
+	"price":1}
+      }
+]).pretty()
+
+
+//Apresenta todos os jogos que o vendedor com ID 3 tem.
+db.seller.aggregate([
+{$lookup:{
+	from:"games",
+	localField:"games_id",
+	foreignField:"_id",
+	as: "toRemove"}
+},
+{$match:{"seller_id":3}}
+])
+
+		//Valor medio de um jogo a venda por mais de um vendedor
+
+db.seller.aggregate([
+{$lookup:{
+	from:"games",
+	localField:"games_id",
+	foreignField:"_id",
+	as: "Game"
+}},
+{$match:
+	{"Game.name" : "ARK: Survival Evolved"}
+},
+{$group: 
+	{_id:"$User.games_id", "Valor medio do jogo": {$avg:"$price"}},
+}]).pretty()
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||

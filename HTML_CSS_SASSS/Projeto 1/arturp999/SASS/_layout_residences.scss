@@ -1,0 +1,224 @@
+
+/*FORMATAÇÃO DA CAIXAS QUE TÊM AS IMG e as IMG*/
+.divGERAL{
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: rgba(248, 225, 225, 0.7);
+    border: 1px solid white;
+    box-shadow: 1px 1px 25px white;
+}
+
+.IMG_residences{
+    width:30%;
+    height: 100%;
+    margin-right: 10px;
+    border-right: 1px solid white;
+    object-fit: cover;
+
+    display:block;
+    float: left;
+}
+
+/*FORMATAÇÃO DOS Titulo da pagina*/
+
+h1{
+    text-align: center;
+    color: #3d3939;
+}
+
+@media only screen and (max-width:600px) {
+    h1{
+        font-size: 20px;
+        margin-left: 25px;
+        margin-top: -5px;
+    }
+}
+
+/*FORMATAÇÃO Da informção*/
+.informação{
+    list-style-type: none;
+    margin-top: 2px;
+    display:block;
+    margin-bottom: 12px;
+    li{
+        margin-bottom: 2px;
+    }
+}
+.preco{
+    color: #3d3939;
+    float: right;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width:600px) {
+    .preco{
+        font-size: 13px;
+        margin: 0;
+        margin-right: 4px;
+    }
+}
+
+.TituloLISTA{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #3d3939;
+}
+
+
+@media only screen and (max-width:600px) {
+    .TituloLISTA{
+        font-size: 15px;
+    }
+}
+
+.concelho{
+    font-size: 12px;
+    color: gray;
+    font-weight: bold;
+}
+
+@media only screen and (max-width:600px) {
+    .concelho{
+        font-size: 7px;
+    }
+}
+.morada{
+    font-size: 14px;
+    font-weight: bold;
+    color: #3d3939;
+}
+@media only screen and (max-width:600px) {
+    .morada{
+        font-size: 10px;
+    }
+}
+
+/*BUTTAO PARA COMPRAR*/
+.button-sale{
+    margin-top: 1px;
+    background-color: rgb(61, 57, 57);
+    color:white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    float: right;
+    margin-top: 15px;
+    margin-right: 45px;
+}
+
+@media only screen and (max-width:600px) {
+    .button-sale{
+        width: 80px;
+        height: 20px;
+        margin: 0;
+    }
+}
+
+.button-sale:hover {
+    background-color: rgb(105, 102, 102);
+    color: white;
+    border-radius: 10px;
+  }
+.button-sale:focus {
+    outline: none;
+     }
+
+/*INFORMAÇÃO DO CONTACTO*/
+.contact{
+    font-size: 20px;
+    font-weight: bolder;
+    color: #3d3939;
+    margin:0;
+}
+@media only screen and (max-width:600px) {
+    .contact{
+        font-size: 12px;
+    }
+}
+.contactos{
+    margin:0;
+    font-weight: bold;
+    font-size: 15px;
+    color: #3d3939;
+}
+@media only screen and (max-width:600px) {
+    .contactos{
+        margin-top: 2px;
+        font-size: 10px;
+    }
+}
+
+
+/*SLIDER*/
+
+.slider_wrapper{
+    margin: 0 auto;
+    position: relative;
+    width: 30%;
+    height: 99%;
+    border: solid 1px gray ;
+    margin-right: 5px;
+    display:block;
+    float: left;
+    background-color: none;
+}
+
+.slide_img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.slide_img img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+
+}
+
+.nav_dots{
+    width: 100%;
+    height: 11px;
+    bottom: 12%;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+}
+
+.dots{
+    top: -5px;
+    width: 15px;
+    height: 15px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(132, 87, 87, 0.6);
+}
+
+.slide_img{
+    z-index: -1;
+}
+
+#i1, #i2, #i3{
+    display: none;
+}
+
+#i1:checked ~ #um,
+#i2:checked ~ #dois,
+#i3:checked ~ #tres {
+    z-index: 1;
+}
+
+#i1:checked ~ .nav_dots #dot1,
+#i2:checked ~ .nav_dots #dot2,
+#i3:checked ~ .nav_dots #dot3{
+    background: #fff;
+}

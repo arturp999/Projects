@@ -1,0 +1,26 @@
+//preciso dar update db para ter um campo para colocar URL das imagens que vao aparecer.
+
+
+db.games.update({},{$set:{"img_url":"1"}},false,true)
+
+db.games.update({ _id: 1 }, { $set: {"img_url": "https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png" } })
+
+db.games.update({ _id: 2 }, { $set: {"img_url": "https://store.ubi.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw75a90933/images/large/5e84a5065cdf9a21c0b4e737.jpg?sw=341&sh=450&sm=fit" } })
+
+db.games.update({ _id: 3 }, { $set: {"img_url": "https://store-images.s-microsoft.com/image/apps.30459.13817182746640445.1152921504738442637.a405c13b-cd2b-4d17-8184-4957c880e4ee" } })
+
+db.games.update({ _id: 4 }, { $set: {"img_url": "https://s1.gaming-cdn.com/images/products/1512/orig/the-elder-scrolls-v-skyrim-special-edition-cover.jpg" } })
+
+db.games.update({ _id: 5 }, { $set: {"img_url": "https://cdn.cdkeys.com/500x706/media/catalog/product/d/e/dead-by-daylight-pc-get-cheap-cd-key_6_.jpg" } })
+
+db.games.update({ _id: 6 }, { $set: {"img_url": "https://s1.gaming-cdn.com/images/products/1497/orig/the-witcher-3-wild-hunt-goty-cover.jpg" } })
+
+db.games.update({ _id: 7 }, { $set: {"img_url": "https://store-images.s-microsoft.com/image/apps.53613.14397339579473373.33c025e6-b311-42fd-a5d3-702031988979.354a28ca-1fd5-42ce-9d0a-7882e6884d43" } })
+
+db.games.update({ _id: 8 }, { $set: {"img_url": "https://upload.wikimedia.org/wikipedia/pt/f/f7/Cyberpunk_2077_capa.png" } })
+
+db.games.update({ _id: 9 }, { $set: {"img_url": "https://cdn.cdkeys.com/500x706/media/catalog/product/b/o/borderlands-3-pc-buy-now-cd-key_1.jpg" } })
+
+db.games.update({ _id: 10 }, { $set: {"img_url": "https://store-images.s-microsoft.com/image/apps.25992.14107985044965209.e8fed65f-093d-40d1-849f-6c564d2ad876.89955624-8043-4f20-8620-4381e11a3546" } })
+
+db.games.update({ _id: 11 }, { $set: {"img_url": "https://cdn.cdkeys.com/500x706/media/catalog/product/r/e/red-dead-redemption-2-ultimate-edition-cdkeys-pc.jpg" } })

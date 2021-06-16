@@ -1,0 +1,240 @@
+body{
+    margin: 0;
+}
+
+.logo{
+    text-align: center;
+    img{
+        height:100px;
+        text-align: center;
+       }
+}
+
+
+.img_main{
+    text-align: center;
+    img{
+        border: 1px solid grey;
+        height: 100%;
+        width:80%;
+    }
+}
+
+.titulo_principal{
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}
+@media only screen and (max-width: 600px) {
+    .titulo_principal{
+        font-size:20px;
+     }   
+   }
+
+.texto_principal {
+    color: #1D2939;
+    margin: 20px;
+    background-color: #E9ECEF;
+    padding: 10px;
+    border-radius: 5px ;
+    border: 1px solid black;
+}
+@media only screen and (max-width: 600px) {
+    .texto_principal{
+        font-size:13px;
+     }   
+   }
+/* */
+.breadcrumb{
+    margin-top: 20px;
+}
+
+.posicaobuttao{
+
+    margin-left: 20px;
+    .img_sgv {
+        height: 25px;
+        filter: brightness(1) invert(1);
+    }
+
+}
+/* AS 2 COLUNAS PRINCIPAIS */
+
+.row {
+    margin: 10px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+.column {
+    flex: 35%;
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+
+.jumbotron{
+    padding: 10px;
+}
+  
+/* SUBTITULOS */
+.subtitulos {
+    color:  white;
+    font-weight:400;
+    margin: 5px;
+    text-align: center;
+}
+@media only screen and (max-width: 600px) {
+    .subtitulos{
+        font-size: 17px;
+     }   
+   }
+  
+/* SUBTEXTOS  */
+.sub_textos{
+    font-size: 15px;
+    line-height:2.25;
+    letter-spacing:0.20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+}
+@media only screen and (max-width: 600px) {
+    .sub_textos{
+        font-size:12px;
+     }   
+   }
+/* CORRES DO BACKGROUND DAS 2 COLUNAS  */
+.bgcolunas{
+    background-color:#1D2939;
+}
+
+.discplinas_under{
+    border-bottom: 2px solid #1D2939;
+}
+
+/* ACCORDIAO */
+.localização-dimensoes-acordiao{
+    display: inline-flexbox;
+    width: 80%;
+    margin: auto;
+    h1 {
+        text-align: center;
+    }
+    h5 {
+        text-align: center;
+    }
+    .maisimportante{
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    .p{
+        color: white;
+        background-color: #002B36;
+        padding: 15px;
+        font-size: 15px;
+        line-height:2.25;
+        letter-spacing:0.20px;
+        margin-left: 5px;
+        margin-right: 5px;
+        color: white;
+    }
+    button:focus {
+        outline:0;
+    }
+}
+.accordion {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    background-color: #073642;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  .activee{
+      background-color: #063d4a;
+      padding: 6px;
+      margin-bottom: 0px;
+  }
+  
+  .accordion:hover {
+    background-color: #ccc;
+  }
+
+  .panel {
+    padding: 0 18px;
+    background-color: #073642;
+    display: none;
+    overflow: hidden;
+  }
+
+/* FOOTER */
+
+.footer_cursos{
+    text-align: center;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+.footerHeader{
+    color: white;
+    padding-top: 5px;
+    margin-bottom: 0px;
+
+  }
+
+.row_footer{
+    display: flex;
+    padding: 20px;
+  }
+
+.coluna_footer{
+    flex: 40%;
+    padding: 15px;
+    background-color: #063d4a;
+    border: 5px solid #073642;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    a{
+        margin-bottom: 15px;
+        border-bottom: 2px double #073642;
+    }
+  }
+
+  .footer22{
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+    li{
+        list-style:none;
+        display: inline-block;
+        margin-right: 15px;
+        transition: 0,5s;
+        margin-top: 2px;
+    }
+    li:hover{
+        color: #292929;
+        transform: scale(1.4); 
+    }
+    a { 
+        text-decoration: none;
+    }
+   }
+
+@media only screen and (max-width: 600px) {
+    .row_footer{
+        display: block;
+     }   
+   }

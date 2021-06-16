@@ -1,0 +1,74 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body {
+            padding-top: 80px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header text-center">
+            <h1 class="h1_headers"><span class="fa fa-anchor h1_headers"></span> Profile Page</h1>
+
+        </div>
+
+        <!-- LOCAL INFORMATION -->
+        <div class="jumbotron align-self-center">
+            <h3><span class="fa fa-user"></span> Local</h3>
+            <p>
+                <strong>Your id is</strong>:
+                <%= user.id %><br>
+                    <strong>Your current email: </strong>:
+                    <%= user.email %><br>
+                        <strong>Your current password: </strong>:
+                        <%= user.password %>
+            </p>
+
+            <div class="d-flex justify-content-center">
+                <a href="/upload/upload" class="btn btn-info btn-lg m-1"><span class="fa fa-upload "></span> upload page</a>
+
+                <a href="cat/images" class="btn btn-warning btn-lg m-1"><span class="fa fa-camera"></span> images</a>
+            </div>
+
+
+            <div class="d-flex justify-content-center">
+                <a href="/logout" class="btn btn-danger btn-lg mb-0"><span class="fa fa-sign-out "></span>Logout</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    html,
+    body {
+        background-color: teal;
+    }
+    
+    .h1_headers {
+        color: white;
+    }
+    
+    .jumbotron {
+        margin: auto;
+        width: 50%;
+        background-color: white;
+        border: 1px solid black;
+    }
+    
+    body {
+        padding-top: 80px;
+    }
+</style>
